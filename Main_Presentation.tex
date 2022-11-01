@@ -1,0 +1,82 @@
+%%%%% Main Document for presentation %%%%%
+
+\documentclass[10pt,aspectratio=1610]{beamer}
+%%%%% Base theme used
+\usetheme[progressbar=frametitle]{metropolis}
+%%%%% OSU Theme file is defined
+\usetheme{OSU}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Title Slide Macros Defined %%%%%%%%%%%%%%%%%%%%%%
+
+\title{Alterations to internal topography and affects on Fuel Cladding Chemical Interaction}
+\subtitle{Dissertation Practice Proposal}
+%\date{\today}
+\date{November 21, 2022}
+\author{Robert D. Powers III}
+\institute{Oregon State University}
+\department{Nuclear Science \& Engineering}
+\supervisor{Dr. Wade Marcum}
+\cosupervisor{Dr. Guilluame Mignot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Main Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%% Create Title Slide
+\maketitle
+
+%%%%% Create Table of Contents
+\begin{frame}{Table of contents}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+%%%%% Section Breaks
+%\metroset{sectionpage=none}
+
+%%%%% Section I:
+\section[Intro]{Introduction}
+\input{Presentation_Sections/1-Introduction.tex}            % Chapter 1:  Introduction
+
+%%%%% Section II:
+\section{Survey of Literature}
+\input{Presentation_Sections/2-Survey_of_Literature.tex}	% Chapter 2:  Background & Literature Review
+
+%%%%% Section III:
+\section{Methodology}
+\input{Presentation_Sections/3-Methodology.tex}		    	% Chapter 3:  Materials and Methods
+
+%%%%% Section IV:
+\section{Results}
+\input{Presentation_Sections/4-Results.tex}			    	% Chapter 4:  Results
+
+%%%%% Section V:
+\section{Conclusion}
+\input{Presentation_Sections/5-Conclusion.tex}				% Chapter 5:  Discussion
+
+%%%%% Section VI: (Potential for later on)
+%\input{includes/chapters/6/conclusion}				% Chapter 6:  Conclusion
+
+%%%%% Questions
+\begin{frame}[fragile]{Questions?}
+  \begin{figure}
+    \centering
+    \scalebox{0.65}{\input{images/representation_figures/Carmack_method.tex}}
+  \end{figure}
+\end{frame}
+
+
+\appendix
+
+%%%%% Additional Slides
+\input{Presentation_Sections/Additional_Slides.tex}			
+
+%%%%% References
+\begin{frame}[allowframebreaks]{References}
+
+  \bibliography{bibliography_file}
+  \bibliographystyle{abbrv}
+
+\end{frame}
+
+\end{document}

@@ -1,43 +1,38 @@
-\documentclass[10pt,aspectratio=169]{beamer}
+%%%%% Main Document for presentation %%%%%
 
+\documentclass[10pt,aspectratio=1610]{beamer}
+%%%%% Base theme used
 \usetheme[progressbar=frametitle]{metropolis}
-\usepackage{appendixnumberbeamer}
+%%%%% OSU Theme file is defined
+\usetheme{OSU}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Title Slide Macros Defined %%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{booktabs}
-\usepackage[scale=2]{ccicons}
+\title{Alterations to internal topography and affects on Fuel Cladding Chemical Interaction}
+\subtitle{Dissertation Practice Proposal}
+%\date{\today}
+\date{November 21, 2022}
+\author{Robert D. Powers III}
+\institute{Oregon State University}
+\department{Nuclear Science \& Engineering}
+\supervisor{Dr. Wade Marcum}
+\cosupervisor{Dr. Guilluame Mignot}
 
-\usepackage{pgfplots}
-\usepgfplotslibrary{dateplot}
-
-\usepackage{xspace}
-\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
-
-\usepackage{svg}
-\usepackage{xcolor}
-\usepackage{fontspec}
-
-% set up file goes here
-\input{setup}
-%%%%%%%%%%%%%%%%%%
-
-
-\title{Metropolis -- OSU edition}
-\subtitle{A modern beamer theme}
-% \date{\today}
-\date{}
-\author{Student Name}
-\institute{Oregon State University\\School of Nuclear Science and Engineering}
-\titlegraphic{\hfill\includegraphics[height=1cm]{images/OSU_horizontal_2C_O_over_B.png}}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Main Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+%%%%% Create Title Slide
 \maketitle
+%\metroset{sectionpage=none}
 
+%%%%% Create Table of Contents
 \begin{frame}{Table of contents}
   \setbeamertemplate{section in toc}[sections numbered]
   \tableofcontents%[hideallsubsections]
 \end{frame}
 
+%%%%% Section I:
 \section[Intro]{Introduction}
 
 \begin{frame}[fragile]{Metropolis}
@@ -60,10 +55,10 @@
   \begin{verbatim}    \section{Elements}\end{verbatim}
 
   for which \themename provides a nice progress indicator \ldots
-  \note{testing presenter's notes}
   
 \end{frame}
 
+%%%%% Section II:
 \section{Titleformats}
 
 \begin{frame}{Metropolis titleformats}
@@ -114,6 +109,7 @@
 \end{frame}
 }
 
+%%%%% Section III:
 \section{Elements}
 
 \begin{frame}[fragile]{Typography}
@@ -163,6 +159,7 @@ or show \textbf{bold} results.\end{verbatim}
       \end{description}
   \end{columns}
 \end{frame}
+
 \begin{frame}{Animation}
   \begin{itemize}[<+- | alert@+>]
     \item \alert<4>{This is\only<4>{ really} important}
@@ -170,6 +167,7 @@ or show \textbf{bold} results.\end{verbatim}
     \item And now this
   \end{itemize}
 \end{frame}
+
 \begin{frame}{Figures}
   \begin{figure}
     \newcounter{density}
@@ -196,6 +194,7 @@ or show \textbf{bold} results.\end{verbatim}
     \href{http://www.texample.net/tikz/examples/rotated-polygons/}{texample.net}.}
   \end{figure}
 \end{frame}
+
 \begin{frame}{Tables}
   \begin{table}
     \caption{Largest cities in the world (source: Wikipedia)}
@@ -211,6 +210,7 @@ or show \textbf{bold} results.\end{verbatim}
     \end{tabular}
   \end{table}
 \end{frame}
+
 \begin{frame}{Blocks}
   Three different block environments are pre-defined and may be styled with an
   optional background color.
@@ -247,6 +247,7 @@ or show \textbf{bold} results.\end{verbatim}
 
   \end{columns}
 \end{frame}
+
 \begin{frame}{Math}
   \begin{equation*}
     e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
@@ -268,6 +269,7 @@ or show \textbf{bold} results.\end{verbatim}
     \end{tikzpicture}
   \end{figure}
 \end{frame}
+
 \begin{frame}{Bar charts}
   \begin{figure}
     \begin{tikzpicture}
@@ -307,6 +309,7 @@ or show \textbf{bold} results.\end{verbatim}
   Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
 \end{frame}
 
+%%%%% Section IV:
 \section{Conclusion}
 
 \begin{frame}{Summary}
@@ -323,14 +326,18 @@ or show \textbf{bold} results.\end{verbatim}
 
 \end{frame}
 
-{\setbeamercolor{palette primary}{fg=osuorange, bg=white}
-\begin{frame}[standout]
-  Questions?
+%%%%% Questions
+\begin{frame}[fragile]{Questions?}
+  \begin{figure}
+    \centering
+    \scalebox{0.65}{\input{images/representation_figures/Carmack_method.tex}}
+  \end{figure}
 \end{frame}
-}
+
 
 \appendix
 
+%%%%% Additional Slides
 \begin{frame}[fragile]{Backup slides}
   Sometimes, it is useful to add slides at the end of your presentation to
   refer to during audience questions.
@@ -342,9 +349,10 @@ or show \textbf{bold} results.\end{verbatim}
   slides in the appendix.
 \end{frame}
 
+%%%%% References
 \begin{frame}[allowframebreaks]{References}
 
-  \bibliography{demo}
+  \bibliography{bibliography_file}
   \bibliographystyle{abbrv}
 
 \end{frame}

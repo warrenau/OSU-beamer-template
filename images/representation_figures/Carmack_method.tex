@@ -1,0 +1,52 @@
+\begin{tikzpicture}
+
+\node (C) [cylinder, thick, shape border rotate=90, draw, fill=white, minimum height=1.5cm, minimum width=2.5cm] at (0,-2.2){};
+\node (A) [cylinder, thick, shape border rotate=90, draw, fill=white, minimum height=3cm, minimum width=2.5cm] at (0,0){};
+\node (B) [cylinder, thick, shape border rotate=90, draw, fill=white, minimum height=1.5cm, minimum width=2.5cm] at (0,2.2){};
+
+\draw[densely dotted, thick, black!50!green, label=above:{Centerline}] (0,3) -- (0,-3);
+
+\node (D) [thick, cylinder, shape border rotate=90, draw,minimum height=6cm, minimum width=3cm]{};
+
+\node (E) [rectangle, draw, thick, dashed, minimum height=3cm, minimum width=1.9cm] at (0.8,0){};
+\node (F) [rectangle, draw, thick, dashed, minimum height=11cm, minimum width=8.75cm] at (8.5,-1){};
+
+\draw[thick, black, opacity=0.4] (E.north west) -- (F.north west);
+\draw[thick, black, opacity=0.4] (E.south west) -- (F.south west);
+\draw[thick, black, opacity=0.4] (E.north east) -- (F.north east);
+\draw[thick, black, opacity=0.4] (E.south east) -- (F.south east);
+
+\node (F) [rectangle, draw, fill=white, opacity=0.9, dashed, minimum height=11cm, minimum width=8.75cm] at (8.5,-1){};
+\node (G) [rectangle, draw=none, fill=white, minimum height=8cm, minimum width=6cm] at (8,0){};
+
+\draw[densely dotted, thick, black!50!green] (5,4) -- (5,-4);
+\draw[thick, black] (9.7,4) -- (9.7,-4);
+\draw[thick, black!50!red] (9.95,4) -- (9.95,-5.5);
+\node (G) [rectangle, draw=none, fill=black!30!white, minimum height=8cm, minimum width=2cm] at (11.2,0){};
+\draw[dotted, thick, black, opacity=0.8] (5,4) -- (12.2,4);
+\draw[dotted, thick, black, opacity=0.8] (5,-4) -- (12.2,-4);
+\draw[|-stealth, thick, black, opacity=0.8] (5,-4.25) -- (12.2,-4.25);
+
+\node (l1) [rectangle, draw=none, fill=none, minimum height=0.5cm, minimum width=0.5cm] at (5,4.25){\small Centerline};
+\node (l2) [rectangle, draw=none, fill=none, minimum height=0.5cm, minimum width=0.5cm] at (11.2,4.25){\small Cladding};
+\node (l3) [rectangle, draw=none, fill=none, minimum height=0.5cm, minimum width=0.5cm] at (7.35,4.25){\small Fuel};
+\node (l4) [rectangle, draw=none, fill=none, minimum height=0.5cm, minimum width=0.5cm] at (5,-4.5){\small $r=0$};
+\node (l4.2) [rectangle, draw=none, fill=none, minimum height=0.5cm, minimum width=0.5cm] at (12.2,-4.5){\small $r=X$};
+\node (l5) [rectangle, draw=none, fill=none, minimum height=0.5cm, minimum width=0.5cm] at (5,-5){\small $J_i=0$};
+\node (l6) [rectangle, draw=none, fill=none, minimum height=0.5cm, minimum width=0.5cm] at (5,-5.5){\small $q''=0$};
+\node (l7) [rectangle, draw=none, fill=none, minimum height=0.5cm, minimum width=0.5cm] at (9.95,-5.75){\small Fuel Cladding Interface};
+\node (l7) [rectangle, draw=none, fill=none, minimum height=0.5cm, minimum width=0.5cm] at (9.95,-6.25){\small Carmack: $\vec{J}_i=F(T,t)$};
+\node (l8) [rectangle, draw=none, fill=none, minimum height=0.5cm, minimum width=0.5cm] at (12.2,-5){\small $T=T_S$};
+
+\draw[stealth-stealth, thick, black, opacity=0.8] (5,1) -- (9.7,1);
+\node (l3) [rectangle, draw=none, fill=white, minimum height=1.5cm, minimum width=0.5cm, text width=0.5cm] at (7.35,1){\centering \small U\\Pu\\Zr\\};
+\draw[-stealth, thick, black, opacity=0.8] (5,-0.5) -- (9.7,-0.5);
+\node (l3) [rectangle, draw=none, fill=white, minimum height=1.5cm, minimum width=0.5cm, text width=1cm] at (7.35,-0.5){\centering \small Rare\\Earth\\};
+
+\node (l3) [rectangle, draw=none, fill=white, minimum height=0.5cm, minimum width=0.5cm, text width=1cm] at (7.35,-2.25){\centering \small \\$q'''$\\};
+\node (l3) [rectangle, draw=none, fill=white, minimum height=0.5cm, minimum width=0.5cm, text width=1cm] at (7.35,-3){\centering \small \\$S_i$\\};
+
+\draw[stealth-, thick, black, opacity=0.8] (10.2,0) -- (12.2,0);
+\node (l3) [rectangle, draw=none, fill=black!30!white, minimum height=1.5cm, minimum width=0.5cm, text width=0.5cm] at (11.2,0){\centering \small Fe\\Ni\\};
+
+\end{tikzpicture}
