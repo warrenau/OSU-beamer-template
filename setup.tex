@@ -1,0 +1,120 @@
+% this file contains custom setup stuff to alter theme from base metropolis
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% this block is used for presenter's notes, but it needs an external program or something to work
+% https://github.com/Cimbali/pympress/
+% \usepackage{pgfpages}
+% \setbeamertemplate{note page}[plain]
+% \setbeameroption{show notes on second screen=right}
+
+% my stuff for colors and things
+%\definecolor{osuorange}{rgb}{.9,.35,.1} % define osu orange -- neutral orange
+% Set up custom OSU orange color
+\definecolor{osuorange}{cmyk}{.1197,.9474,1,0.0309} % very red orange
+%\definecolor{osuorange}{HTML}{F77F00} % very yellow orange
+%\definecolor{osuyellow}{rgb}{.9,.325,0}
+%\definecolor{beaverorange}{cmyk}{0,.79,1,0} % osu official beaver orange cymk 0-79-100-0 -- doesnt look right with {0,79,100,0} nor {0,.79,1,0} -- not sure what is wrong
+\definecolor{beaverorange}{HTML}{D73F09} % osu official beaver orange hex -- seems to be the best one to use
+%\definecolor{beaverorange}{rgb}{215,63,9} % this one doesnt work for some reason -- might need to adjust numbers for rgb system in latex
+\definecolor{backgroundgray}{gray}{0.4}
+\definecolor{progressbargray}{gray}{0.6}
+
+\setbeamercolor{frametitle}{bg=beaverorange} % change frame title colors
+
+\setbeamercolor{progress bar}{fg=black,bg=progressbargray} % change progress bar colors
+\setbeamercolor{title separator}{fg=beaverorange}
+\setbeamercolor{progress bar in section page}{fg=beaverorange,bg=progressbargray}
+
+\setbeamercolor{normal text}{fg=black}
+
+
+% add logo to frame title -- need coe logo with no background, or just use general osu logo with no background
+\makeatletter
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[%
+      wd=\paperwidth,%
+      sep=0pt,%
+      leftskip=\metropolis@frametitle@padding,%
+      rightskip=\metropolis@frametitle@padding,%
+    ]{frametitle}%
+  \metropolis@frametitlestrut@start%
+  \insertframetitle%
+  \nolinebreak%
+  \metropolis@frametitlestrut@end%
+  \hfill
+  \raisebox{-0.6ex}{\includesvg[height=3ex,keepaspectratio]{images/osu_coe_logo_fromppt_white.svg}}
+  \end{beamercolorbox}%
+  \usebeamertemplate*{progress bar in head/foot}
+}
+\makeatother
+
+\setbeamertemplate{frame footer}{\includesvg[height=4ex,keepaspectratio]{images/osu_coe_logo_fromppt.svg}\hfill}
+
+% change font family
+\setmainfont{Cambria.ttf}[
+                Path = font/,
+                BoldFont = CambriaBold.ttf,
+                ItalicFont = CambriaItalic.ttf,
+                BoldItalicFont  = CambriaBoldItalic.ttf]
+
+%\usefonttheme{serif}
+
+% forces 'regular' font type, instead of light
+%\usepackage[sfdefault]{FiraSans}
+% change just the math font to default
+\def\mathfamilydefault{cmr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% weird stuff to force fonts from font files
+
+\renewcommand{\iffontsavailable}[3]{%
+    \setcounter{fontsnotfound}{0}%
+    \expandafter\forcsvlist\expandafter%
+    \checkfont\expandafter{#1}%
+    \ifnum\value{fontsnotfound}=0%
+      #2%
+    \else%
+      #3%
+    \fi%
+  }
+  \iffontsavailable{Fira Sans Light,%
+                    Fira Sans Light Italic,%
+                    Fira Sans,%
+                    Fira Sans Italic}%
+  {%
+    \setsansfont[Path = font/,
+                BoldFont = CambriaBold.ttf,
+                ItalicFont = CambriaItalic.ttf,
+                BoldItalicFont  = CambriaBoldItalic.ttf]%
+                {Cambria.ttf}%
+   }%{%
+%     \iffontsavailable{Fira Sans Light OT,%
+%                       Fira Sans Light Italic OT,%
+%                       Fira Sans OT,%
+%                       Fira Sans Italic OT}%
+%     {%
+%       \setsansfont[ItalicFont={Fira Sans Light Italic OT},%
+%                   BoldFont={Fira Sans OT},%
+%                   BoldItalicFont={Fira Sans Italic OT}]%
+%                   {Fira Sans Light OT}%
+%    }
+    {%
+      \PackageWarning{beamerthememetropolis}{%
+        Could not find Fira Sans fonts%
+      }
+    %}
+  }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% show notes
+
+
+% fixes page number on standout slide
+\setbeamertemplate{frame numbering}{
+	\ifbool{metropolis@standout}{}{
+		\insertframenumber
+	}
+}
